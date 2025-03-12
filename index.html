@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahoot! Nurmuhhammad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Экран ввода имени -->
+        <div id="name-screen" class="name-screen">
+            <div class="kahoot-logo">Kahoot!</div>
+            <div class="name-input-container">
+                <input type="text" id="player-name" placeholder="Введите ваше имя" maxlength="15">
+                <button id="start-game-btn" class="start-btn">Присоединиться</button>
+            </div>
+            <div class="players-container">
+                <div id="players-status" class="players-status">Нужно ещё 10 игроков</div>
+                <div id="players-list" class="players-list"></div>
+            </div>
+        </div>
+
+        <!-- Основной экран игры -->
+        <div id="game-screen" class="game-screen" style="display: none;">
+            <div class="game-header">
+                <div class="players-info">
+                    <div class="players-grid" id="players-grid"></div>
+                </div>
+                <div class="timer" id="timer">20</div>
+                <div class="question-counter">Вопрос: <span id="current-question">1</span>/<span id="total-questions">10</span></div>
+            </div>
+
+            <div class="question-container">
+                <div class="question" id="question"></div>
+                <div class="answers-grid">
+                    <button class="answer-btn red" id="answer0">
+                        <div class="answer-shape">▲</div>
+                        <span class="answer-text"></span>
+                    </button>
+                    <button class="answer-btn blue" id="answer1">
+                        <div class="answer-shape">■</div>
+                        <span class="answer-text"></span>
+                    </button>
+                    <button class="answer-btn yellow" id="answer2">
+                        <div class="answer-shape">●</div>
+                        <span class="answer-text"></span>
+                    </button>
+                    <button class="answer-btn green" id="answer3">
+                        <div class="answer-shape">◆</div>
+                        <span class="answer-text"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Экран результатов -->
+        <div class="result-screen" id="result-screen">
+            <div class="confetti" id="confetti"></div>
+            <div class="result-content">
+                <h2>Игра завершена!</h2>
+                <div id="final-results" class="final-results"></div>
+                <button id="restart-btn" class="restart-btn">Играть снова</button>
+            </div>
+        </div>
+
+        <!-- Всплывающее окно с результатом ответа -->
+        <div class="feedback" id="feedback">
+            <div class="feedback-content">
+                <div class="feedback-text"></div>
+                <div class="feedback-score"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
